@@ -41,13 +41,26 @@ python -m playwright install
 # python -m playwright install --with-deps
 ```
 
-4. (Optional) If the repository contains a `pw/.env` file with environment variables, the test suite loads it automatically — otherwise set env vars manually if needed.
+4. Users
+```bash
+Before start, please create these users:
+test_automation_1@holistiplan.com
+test_automation_2@holistiplan.com
+test_automation_3@holistiplan.com
+bfx!wkp3zve3WUX*guq the same for all of them.
+```
+
+---
+
+5. If the repository contains a `pw/.env` file with environment variables, the test suite loads it automatically — otherwise set env vars manually if needed.
 
 Common variables you may set in `pw/.env` or your shell:
 - `BASE_URL` — base URL of the web app under test (default: http://localhost:3000/)
 - `USER_PASSWORD` — default password used by sign-in helpers
 
 ---
+
+
 
 ## Running tests
 
