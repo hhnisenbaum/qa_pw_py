@@ -16,9 +16,14 @@ class SignInPage(HeaderComponentPage):
     SUCCESS_TEMPLATE = "Successfully signed in as"
     ERROR_TEMPLATE = "The email address and/or password you specified are not correct."
 
+    def click_link_forgot_your_password(self) -> None:
+        self.page.get_by_role("link", name="Forgot your password?").click(timeout=self.base_timeout)
+
     def click_email_field(self) -> None:
         """Click the email textbox to focus it."""
         self.page.get_by_role("textbox", name=self.EMAIL_FIELD_NAME).click()
+
+
 
     def fill_email(self, email: str) -> None:
         """Fill the email textbox (clicks first to focus)."""
@@ -38,6 +43,10 @@ class SignInPage(HeaderComponentPage):
     def click_sign_in_button(self) -> None:
         """Click the 'Sign In' button."""
         self.page.get_by_role("button", name="Sign In").click(timeout=60000)
+
+    def click_sign_out_button(self) -> None:
+        """Click the 'Sign Out' button."""
+        self.page.get_by_role("button", name="Sign Out").click(timeout=60000)
 
     def expect_successful_sign_in(self, email: str) -> None:
         """Assert the success message is present in the page body."""
@@ -63,4 +72,6 @@ class SignInPage(HeaderComponentPage):
         self.fill_email(email)
         self.fill_password(password)
         self.click_sign_in_button()
+
+
 

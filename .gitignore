@@ -284,3 +284,7 @@ webpack-stats.json
 /.idea/holistiplan.iml
 /.idea/misc.xml
 /.idea/vcs.xml
+# IDEs and editors
+.idea/
+.vscode/
+

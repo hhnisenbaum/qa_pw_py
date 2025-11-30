@@ -47,11 +47,11 @@ watch(
     <div class="row justify-content-around">
       <div class="col-4 text-center card bg-light p-0 h5">
         <div class="card-header">Ponts Redeemed</div>
-        <div class="card-body">{{ rewardStore.pointsRedeemed }}</div>
+        <div class="card-body" data-testid="points-redeemed">{{ rewardStore.pointsRedeemed }}</div>
       </div>
       <div class="col-4 text-center card bg-light p-0 h5">
         <div class="card-header">Ponts Remaining</div>
-        <div class="card-body" :class="{ 'text-danger': remainingPoints < 0 }">
+        <div class="card-body" data-testid="points-remaining" :class="{ 'text-danger': remainingPoints < 0 }">
           {{ remainingPoints }}
         </div>
       </div>
